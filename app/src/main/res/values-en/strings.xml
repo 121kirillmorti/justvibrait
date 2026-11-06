@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">JustVibrait</string>
+    <string name="developer_name">kotiktortiktech</string>
+    <string name="app_tagline">Vibration in time with your music</string>
+
+    <string name="tab_local">File</string>
+    <string name="tab_live">Live</string>
+    <string name="tab_settings">Settings</string>
+
+    <string name="status_ready">Ready to start</string>
+    <string name="status_playing">Playing</string>
+    <string name="status_listening">Listening</string>
+    <string name="status_paused">Paused</string>
+    <string name="status_vibration_on">Vibration is active</string>
+    <string name="status_vibration_off">Vibration is off</string>
+
+    <string name="bpm_label">BPM</string>
+    <string name="bpm_unknown">—</string>
+    <string name="bpm_value">%1$d BPM</string>
+    <string name="profile_label">Profile</string>
+    <string name="profile_soft">Soft</string>
+    <string name="profile_sharp">Sharp</string>
+    <string name="profile_dynamic">Dynamic</string>
+    <string name="profile_soft_desc">Smooth waves only on strong bass</string>
+    <string name="profile_sharp_desc">Short, precise hits on every accent</string>
+    <string name="profile_dynamic_desc">Amplitude and pattern follow the music</string>
+    <string name="profile_section">Vibration profile</string>
+    <string name="profile_current">Current profile: %1$s</string>
+
+    <string name="local_title">Local file</string>
+    <string name="local_subtitle">Audio or video from device storage</string>
+    <string name="choose_media">Choose media</string>
+    <string name="choose_file">Choose file</string>
+    <string name="no_file_title">Nothing selected</string>
+    <string name="no_file_subtitle">MP3, FLAC, WAV, AAC, MP4, MKV and other formats supported by Android.</string>
+    <string name="supported_formats">Opened through the system file picker</string>
+    <string name="open_file">Open file</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="stop">Stop</string>
+    <string name="duration_unknown">--:--</string>
+    <string name="analysis_title">Live analysis</string>
+    <string name="analysis_subtitle">Low frequencies and transients are extracted in real time</string>
+    <string name="bass_level">Bass level</string>
+    <string name="level_label">Level</string>
+    <string name="local_tip_title">How it works</string>
+    <string name="local_tip_body">ExoPlayer decodes the file, a PCM tap sends the audio stream to the analyzer, and the vibration motor receives pulses with an adjustable audio-output delay. For video, sound and vibration share the same timeline.</string>
+    <string name="video_preview">Video</string>
+    <string name="playback_position">%1$s / %2$s</string>
+
+    <string name="live_title">Live listening</string>
+    <string name="live_subtitle">Vibration in time with sound around or inside the phone</string>
+    <string name="source_label">Audio source</string>
+    <string name="source_system">System audio</string>
+    <string name="source_mic">Microphone</string>
+    <string name="live_start">Start listening</string>
+    <string name="live_stop">Stop</string>
+    <string name="live_status_idle">Waiting to start</string>
+    <string name="live_status_preparing">Preparing…</string>
+    <string name="live_status_running_system">Capturing system audio</string>
+    <string name="live_status_running_mic">Listening to the microphone</string>
+    <string name="live_elapsed">Elapsed</string>
+    <string name="live_system_hint">Captures sound from other apps with AudioPlaybackCapture. Android will ask for confirmation.</string>
+    <string name="live_mic_hint">The microphone hears music from the speakers. Headphones give a cleaner bass response.</string>
+    <string name="live_permission_title">Permissions</string>
+    <string name="live_permission_body">Audio analysis needs recording permission. Background operation uses a notification, so notification permission is requested too.</string>
+    <string name="live_limitation_title">A note about system audio</string>
+    <string name="live_limitation_body">Android only allows capture from apps that have not opted out. Spotify, YouTube and most players work, but some streaming services may output silence. Switch to the microphone if that happens.</string>
+    <string name="live_capture_active">Capture is active</string>
+    <string name="live_capture_inactive">Capture is off</string>
+    <string name="permission_audio_denied">Audio analysis is impossible without microphone access.</string>
+    <string name="projection_denied">System audio capture was cancelled.</string>
+    <string name="permission_settings">Open settings</string>
+    <string name="notification_denied">Notifications are disabled — background capture will run without a notification.</string>
+
+    <string name="settings_title">Settings</string>
+    <string name="settings_subtitle">Vibration character and appearance</string>
+    <string name="vibration_section">Vibration</string>
+    <string name="intensity_label">Intensity</string>
+    <string name="intensity_desc">Overall pulse strength</string>
+    <string name="sensitivity_label">Sensitivity</string>
+    <string name="sensitivity_desc">Lower reacts only to strong bass, higher reacts to quiet hits</string>
+    <string name="threshold_label">Trigger threshold</string>
+    <string name="threshold_value">%1$d%%</string>
+    <string name="sync_delay_label">Sync delay</string>
+    <string name="sync_delay_desc">Increase if vibration runs ahead of the sound</string>
+    <string name="millis_value">%1$d ms</string>
+    <string name="appearance_section">Appearance</string>
+    <string name="theme_label">Theme</string>
+    <string name="theme_system">System</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="dynamic_color">Dynamic Color</string>
+    <string name="dynamic_color_desc">Material You colors from your wallpaper and system palette</string>
+    <string name="dynamic_color_unsupported">Requires Android 12 or newer</string>
+    <string name="about_section">About</string>
+    <string name="about_developer">Developer</string>
+    <string name="about_version">Version</string>
+    <string name="about_stack">Kotlin · Jetpack Compose · Material 3 · Media3</string>
+    <string name="about_pixel">The haptic engine is tuned for Pixel linear motors: short pulses with controllable amplitude and a calibrated delay.</string>
+    <string name="about_description">Real-time vibration synchronization with audio and video.</string>
+    <string name="reset_settings">Reset settings</string>
+    <string name="reset_done">Settings reset</string>
+
+    <string name="debug_section">Debug</string>
+    <string name="telemetry_label">PC monitor</string>
+    <string name="telemetry_desc">Stream vibration telemetry to the desktop app over Wi-Fi (UDP 45454)</string>
+    <string name="telemetry_host_label">Computer IP</string>
+    <string name="telemetry_host_desc">Leave empty for broadcast. If the PC is not discovered, enter the IP shown in the monitor window.</string>
+    <string name="telemetry_host_hint">192.168.1.10</string>
+    <string name="telemetry_note">Android does not report the actual motor amplitude. The monitor shows the values commanded by the app and a separate vibration estimate from the phone accelerometer.</string>
+
+    <string name="notification_channel_name">Audio capture</string>
+    <string name="notification_channel_desc">Background vibration service notification</string>
+    <string name="notification_title">JustVibrait is listening</string>
+    <string name="notification_playback">System audio → vibration</string>
+    <string name="notification_mic">Microphone → vibration</string>
+    <string name="notification_stop">Stop</string>
+
+    <string name="error_file_open">Could not open the file</string>
+    <string name="error_playback">Playback error</string>
+    <string name="error_no_vibrator">This device has no vibration motor</string>
+    <string name="error_permission">Microphone permission is missing</string>
+    <string name="error_projection">Could not access system audio</string>
+    <string name="error_audio_init">Could not initialise audio capture</string>
+    <string name="error_capture">Audio capture error</string>
+    <string name="error_capture_stopped">Capture stopped</string>
+    <string name="error_projection_stopped">The system stopped audio capture</string>
+    <string name="error_source_unsupported">This audio source is unavailable on the device</string>
+</resources>

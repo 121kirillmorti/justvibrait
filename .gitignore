@@ -1,0 +1,31 @@
+# Android / Gradle
+.gradle/
+**/build/
+out/
+local.properties
+*.iml
+.idea/
+*.apk
+*.aab
+*.ap_
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Signing (NEVER commit)
+keystore/*.jks
+keystore/*.keystore
+keystore/*.p12
+keystore/*.pfx
+
+# Windows desktop build outputs (release assets, not source)
+desktop/JustVibraitMotorMonitor/dist/*.exe
+desktop/JustVibraitMotorMonitor/dist/*.zip
+desktop/JustVibraitMotorMonitor/tests/bin/
+*.exe
+
+# Local / editor / OS
+.vscode/
+.DS_Store
+Thumbs.db
+*.log

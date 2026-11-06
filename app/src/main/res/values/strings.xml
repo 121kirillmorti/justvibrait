@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">JustVibrait</string>
+    <string name="developer_name">kotiktortiktech</string>
+    <string name="app_tagline">Вибрация в такт музыке</string>
+
+    <string name="tab_local">Файл</string>
+    <string name="tab_live">Live</string>
+    <string name="tab_settings">Настройки</string>
+
+    <string name="status_ready">Готово к запуску</string>
+    <string name="status_playing">Воспроизведение</string>
+    <string name="status_listening">Слушаю звук</string>
+    <string name="status_paused">Пауза</string>
+    <string name="status_vibration_on">Вибрация активна</string>
+    <string name="status_vibration_off">Вибрация выключена</string>
+
+    <string name="bpm_label">BPM</string>
+    <string name="bpm_unknown">—</string>
+    <string name="bpm_value">%1$d BPM</string>
+    <string name="profile_label">Профиль</string>
+    <string name="profile_soft">Мягкий</string>
+    <string name="profile_sharp">Резкий</string>
+    <string name="profile_dynamic">Динамический</string>
+    <string name="profile_soft_desc">Плавные волны только на сильных басах</string>
+    <string name="profile_sharp_desc">Короткие и точные удары на каждый акцент</string>
+    <string name="profile_dynamic_desc">Амплитуда и рисунок следуют за музыкой</string>
+    <string name="profile_section">Профиль вибрации</string>
+    <string name="profile_current">Текущий профиль: %1$s</string>
+
+    <string name="local_title">Локальный файл</string>
+    <string name="local_subtitle">Аудио или видео из памяти устройства</string>
+    <string name="choose_media">Выбрать медиа</string>
+    <string name="choose_file">Выбрать файл</string>
+    <string name="no_file_title">Ничего не выбрано</string>
+    <string name="no_file_subtitle">Поддерживаются MP3, FLAC, WAV, AAC, MP4, MKV и другие форматы, которые умеет Android.</string>
+    <string name="supported_formats">Доступ через системный файловый менеджер</string>
+    <string name="open_file">Открыть файл</string>
+    <string name="play">Играть</string>
+    <string name="pause">Пауза</string>
+    <string name="stop">Остановить</string>
+    <string name="duration_unknown">--:--</string>
+    <string name="analysis_title">Живой анализ</string>
+    <string name="analysis_subtitle">Низкие частоты и атаки выделяются на лету</string>
+    <string name="bass_level">Уровень баса</string>
+    <string name="level_label">Громкость</string>
+    <string name="local_tip_title">Как это работает</string>
+    <string name="local_tip_body">ExoPlayer декодирует файл, аудиопоток перехватывается PCM-анализатором, а вибромотор получает импульсы с учётом задержки аудиовыхода. Для видео звук и вибрация идут из одного таймлайна.</string>
+    <string name="video_preview">Видео</string>
+    <string name="playback_position">%1$s / %2$s</string>
+
+    <string name="live_title">Живое прослушивание</string>
+    <string name="live_subtitle">Вибрация в такт звуку вокруг или внутри телефона</string>
+    <string name="source_label">Источник звука</string>
+    <string name="source_system">Звук системы</string>
+    <string name="source_mic">Микрофон</string>
+    <string name="live_start">Начать прослушивание</string>
+    <string name="live_stop">Остановить</string>
+    <string name="live_status_idle">Ожидание запуска</string>
+    <string name="live_status_preparing">Подготовка…</string>
+    <string name="live_status_running_system">Захватываю системный звук</string>
+    <string name="live_status_running_mic">Слушаю микрофон</string>
+    <string name="live_elapsed">Длительность</string>
+    <string name="live_system_hint">Захват звука других приложений через AudioPlaybackCapture. Потребуется подтвердить системный запрос.</string>
+    <string name="live_mic_hint">Микрофон слышит музыку из динамиков. Для более чистого баса лучше использовать наушники.</string>
+    <string name="live_permission_title">Разрешения</string>
+    <string name="live_permission_body">Для анализа звука нужно разрешение на запись. Для уведомления о фоновой работе — разрешение на уведомления.</string>
+    <string name="live_limitation_title">Важно про системный звук</string>
+    <string name="live_limitation_body">Android разрешает захват только у приложений, которые не запретили его. Spotify, YouTube и большинство плееров работают, но некоторые стриминговые сервисы могут отдавать тишину. В этом случае переключитесь на микрофон.</string>
+    <string name="live_capture_active">Захват активен</string>
+    <string name="live_capture_inactive">Захват выключен</string>
+    <string name="permission_audio_denied">Без доступа к микрофону анализ звука невозможен.</string>
+    <string name="projection_denied">Захват системного звука отменён.</string>
+    <string name="permission_settings">Открыть настройки</string>
+    <string name="notification_denied">Уведомления отключены — фоновый захват будет работать без уведомления.</string>
+
+    <string name="settings_title">Настройки</string>
+    <string name="settings_subtitle">Характер вибрации и оформление</string>
+    <string name="vibration_section">Вибрация</string>
+    <string name="intensity_label">Интенсивность</string>
+    <string name="intensity_desc">Общая сила импульсов</string>
+    <string name="sensitivity_label">Чувствительность</string>
+    <string name="sensitivity_desc">Ниже — реакция только на сильный бас, выше — на тихие удары</string>
+    <string name="threshold_label">Порог срабатывания</string>
+    <string name="threshold_value">%1$d%%</string>
+    <string name="sync_delay_label">Задержка синхронизации</string>
+    <string name="sync_delay_desc">Увеличьте, если вибрация опережает звук</string>
+    <string name="millis_value">%1$d мс</string>
+    <string name="appearance_section">Оформление</string>
+    <string name="theme_label">Тема</string>
+    <string name="theme_system">Системная</string>
+    <string name="theme_light">Светлая</string>
+    <string name="theme_dark">Тёмная</string>
+    <string name="dynamic_color">Dynamic Color</string>
+    <string name="dynamic_color_desc">Цвета Material You из обоев и системной палитры</string>
+    <string name="dynamic_color_unsupported">Нужен Android 12 или новее</string>
+    <string name="about_section">О приложении</string>
+    <string name="about_developer">Разработчик</string>
+    <string name="about_version">Версия</string>
+    <string name="about_stack">Kotlin · Jetpack Compose · Material 3 · Media3</string>
+    <string name="about_pixel">Вибродвижок оптимизирован под линейные моторы Pixel: короткие импульсы с управляемой амплитудой и калибруемой задержкой.</string>
+    <string name="about_description">Синхронизация вибрации с аудио и видео в реальном времени.</string>
+    <string name="reset_settings">Сбросить настройки</string>
+    <string name="reset_done">Настройки сброшены</string>
+
+    <string name="debug_section">Отладка</string>
+    <string name="telemetry_label">Монитор на ПК</string>
+    <string name="telemetry_desc">Передавать телеметрию вибрации на компьютер по Wi-Fi (UDP 45454)</string>
+    <string name="telemetry_host_label">IP компьютера</string>
+    <string name="telemetry_host_desc">Оставьте пустым для широковещательной рассылки. Если ПК не находится, введите IP из окна монитора.</string>
+    <string name="telemetry_host_hint">192.168.1.10</string>
+    <string name="telemetry_note">Android не сообщает фактическую амплитуду моторов. Монитор показывает команды приложения и отдельную оценку вибрации по акселерометру телефона.</string>
+
+    <string name="notification_channel_name">Захват звука</string>
+    <string name="notification_channel_desc">Уведомление о работе вибрации в фоне</string>
+    <string name="notification_title">JustVibrait слушает</string>
+    <string name="notification_playback">Системный звук → вибрация</string>
+    <string name="notification_mic">Микрофон → вибрация</string>
+    <string name="notification_stop">Стоп</string>
+
+    <string name="error_file_open">Не удалось открыть файл</string>
+    <string name="error_playback">Ошибка воспроизведения</string>
+    <string name="error_no_vibrator">На устройстве нет вибромотора</string>
+    <string name="error_permission">Нет разрешения на запись звука</string>
+    <string name="error_projection">Не удалось получить доступ к системному звуку</string>
+    <string name="error_audio_init">Не удалось инициализировать аудиозахват</string>
+    <string name="error_capture">Ошибка аудиозахвата</string>
+    <string name="error_capture_stopped">Захват остановлен</string>
+    <string name="error_projection_stopped">Система остановила захват звука</string>
+    <string name="error_source_unsupported">Этот источник звука недоступен на устройстве</string>
+</resources>
