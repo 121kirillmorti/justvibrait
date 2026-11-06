@@ -74,18 +74,6 @@ On PC — live monitoring: command per motor, accelerometer actual value and 15-
 - **Live:** “Listening to microphone” + “System sound / Microphone” switch.
 - **Settings:** intensity / sensitivity / delay sliders, radio profiles, theme, Dynamic Color and “Debug”.
 
-### 🎬 Preview video
-
-Live monitor demo (Windows, 12 seconds, DEMO mode 126 BPM — gauge, motor cards and
-timeline in motion). The GIF below autoplays; the full MP4 is in the release.
-
-<div align="center">
-  <img src="docs/preview.gif" alt="Preview video — Windows monitor in demo mode" width="100%">
-</div>
-
-[![▶️ Watch MP4 preview (12 s)](https://img.shields.io/badge/▶️_MP4_preview-12s-FF4FD8?style=for-the-badge)](docs/preview.mp4)
-[![⬇️ Download MP4](https://img.shields.io/badge/⬇️_Download_MP4-35D6FF?style=for-the-badge)](https://github.com/121kirillmorti/justvibrait/releases/tag/v1.2.0)
-
 ### 🖥️ Windows monitor (demo)
 
 Real renders in demo mode (synthetic telemetry, 126 BPM, two motors: primary and secondary).
