@@ -275,7 +275,7 @@ Watch it in Wireshark. Short pulses are held for at least 140 ms; actual is peak
 
 ### Requirements
 
-- JDK 17, Android LNG Platform 35 + Build-Tools 35.0.0, Gradle 8.9 (wrapper included)
+- JDK 17, Android SDK Platform 35 + Build-Tools 35.0.0, Gradle 8.9 (wrapper included)
 - Windows 10/11 with .NET Framework 4.8 (for the monitor)
 
 ```powershell
