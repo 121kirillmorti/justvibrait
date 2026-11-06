@@ -12,7 +12,7 @@ namespace JustVibrait.Monitor
         private float measuredMs2;
         private bool hasSensor = true;
         private bool connected;
-        private string lastEvent = "импульсов ещё не было";
+        private string lastEvent = Loc.T("gauge.noPulses");
 
         private readonly Font titleFont;
         private readonly Font smallFont;
@@ -76,10 +76,10 @@ namespace JustVibrait.Monitor
                 Ui.DrawRound(g, border, card, 20f);
             }
 
-            Ui.DrawLabel(g, "ФАКТИЧЕСКАЯ ВИБРАЦИЯ", titleFont, Palette.Cyan, 24f, 20f);
+            Ui.DrawLabel(g, Loc.T("gauge.title"), titleFont, Palette.Cyan, 24f, 20f);
             Ui.DrawLabel(
                 g,
-                "АКСЕЛЕРОМЕТР",
+                Loc.T("gauge.tag"),
                 tinyFont,
                 Palette.Muted,
                 Math.Max(24f, Width - 122f),
@@ -167,7 +167,7 @@ namespace JustVibrait.Monitor
                 );
                 using (SolidBrush captionBrush = new SolidBrush(Palette.Muted))
                 {
-                    g.DrawString("ИЗМЕРЕНО", smallFont, captionBrush, captionRect, centered);
+                    g.DrawString(Loc.T("gauge.measured"), smallFont, captionBrush, captionRect, centered);
                 }
 
                 RectangleF unitRect = new RectangleF(
@@ -180,16 +180,19 @@ namespace JustVibrait.Monitor
                 {
                     string unit = hasSensor
                         ? measuredMs2.ToString("0.0") + " м/с²"
-                        : "сенсор недоступен";
+                        : Loc.T("gauge.noSensor");
                     g.DrawString(unit, unitFont, unitBrush, unitRect, centered);
                 }
             }
 
             float commandY = arcRect.Bottom + 8f;
             string commandText = commanded > 0.005f
-                ? "КОМАНДА  " + Ui.Percent(commanded) +
-                    "   ·   " + ((int)Math.Round(commanded * 255f)) + " / 255"
-                : "КОМАНДА  0  ·  ожидание баса";
+                ? Loc.F(
+                    "gauge.cmdFmt",
+                    Ui.Percent(commanded),
+                    ((int)Math.Round(commanded * 255f)).ToString()
+                )
+                : Loc.T("gauge.cmdIdle");
             Ui.DrawLabel(g, commandText, smallFont, Palette.Magenta, 24f, commandY);
 
             using (Pen divider = new Pen(Palette.CardBorder, 1f))
@@ -218,7 +221,7 @@ namespace JustVibrait.Monitor
                     using (Font font = new Font("Segoe UI", 11f, FontStyle.Bold))
                     {
                         g.DrawString(
-                            "ОЖИДАНИЕ ТЕЛЕМЕТРИИ",
+                            Loc.T("gauge.waiting"),
                             font,
                             brush,
                             new RectangleF(card.X, card.Y, card.Width, card.Height),

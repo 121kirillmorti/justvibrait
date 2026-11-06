@@ -45,7 +45,10 @@ class SettingsRepository private constructor(context: Context) {
             dynamicColor = prefs.getBoolean(KEY_DYNAMIC, defaults.dynamicColor),
             telemetryEnabled = prefs.getBoolean(KEY_TELEMETRY, defaults.telemetryEnabled),
             telemetryHost = prefs.getString(KEY_TELEMETRY_HOST, defaults.telemetryHost)
-                ?: defaults.telemetryHost
+                ?: defaults.telemetryHost,
+            language = prefs.getString(KEY_LANGUAGE, null)
+                ?.let { runCatching { AppLanguage.valueOf(it) }.getOrNull() }
+                ?: defaults.language
         )
     }
 
@@ -59,6 +62,7 @@ class SettingsRepository private constructor(context: Context) {
             .putBoolean(KEY_DYNAMIC, settings.dynamicColor)
             .putBoolean(KEY_TELEMETRY, settings.telemetryEnabled)
             .putString(KEY_TELEMETRY_HOST, settings.telemetryHost)
+            .putString(KEY_LANGUAGE, settings.language.name)
             .apply()
     }
 
@@ -72,6 +76,7 @@ class SettingsRepository private constructor(context: Context) {
         private const val KEY_DYNAMIC = "dynamic_color"
         private const val KEY_TELEMETRY = "pc_telemetry"
         private const val KEY_TELEMETRY_HOST = "pc_telemetry_host"
+        private const val KEY_LANGUAGE = "app_language"
 
         @Volatile
         private var instance: SettingsRepository? = null

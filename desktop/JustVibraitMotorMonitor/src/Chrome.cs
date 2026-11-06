@@ -8,8 +8,9 @@ namespace JustVibrait.Monitor
     public sealed class HeaderBar : Control
     {
         public event EventHandler DemoClicked;
+        public event EventHandler LanguageClicked;
 
-        private string device = "нет телефона";
+        private string device = "";
         private string detail = "UDP 45454";
         private bool connected;
         private bool demo;
@@ -20,6 +21,7 @@ namespace JustVibrait.Monitor
         private readonly Font detailFont;
         private readonly Font logoFont;
         private readonly Button demoButton;
+        private readonly Button langButton;
 
         public HeaderBar()
         {
@@ -51,12 +53,39 @@ namespace JustVibrait.Monitor
             demoButton.TabStop = false;
             demoButton.Click += DemoButtonClick;
             Controls.Add(demoButton);
+
+            langButton = new Button();
+            langButton.FlatStyle = FlatStyle.Flat;
+            langButton.FlatAppearance.BorderSize = 1;
+            langButton.FlatAppearance.BorderColor = Palette.CardBorder;
+            langButton.FlatAppearance.MouseOverBackColor = Palette.Card;
+            langButton.BackColor = Palette.Card;
+            langButton.ForeColor = Palette.Text;
+            langButton.Font = new Font("Segoe UI", 8f, FontStyle.Bold);
+            langButton.Cursor = Cursors.Hand;
+            langButton.TabStop = false;
+            langButton.Click += LanguageButtonClick;
+            Controls.Add(langButton);
+            UpdateLangButton();
+            device = Loc.T("header.noPhone");
         }
 
         private void DemoButtonClick(object sender, EventArgs e)
         {
             EventHandler handler = DemoClicked;
             if (handler != null) handler(this, EventArgs.Empty);
+        }
+
+        private void LanguageButtonClick(object sender, EventArgs e)
+        {
+            EventHandler handler = LanguageClicked;
+            if (handler != null) handler(this, EventArgs.Empty);
+        }
+
+        public void UpdateLangButton()
+        {
+            langButton.Text = Loc.IsRussian ? "EN" : "RU";
+            langButton.Invalidate();
         }
 
         public void SetState(string newDevice, string newDetail, bool isConnected, bool isDemo)
@@ -72,11 +101,19 @@ namespace JustVibrait.Monitor
         {
             base.OnResize(e);
             int buttonW = 92;
+            int langW = 64;
             int buttonH = 36;
+            int right = Math.Max(10, Width - 16);
             demoButton.SetBounds(
-                Math.Max(10, Width - buttonW - 16),
+                right - buttonW,
                 Math.Max(10, (Height - buttonH) / 2),
                 buttonW,
+                buttonH
+            );
+            langButton.SetBounds(
+                right - buttonW - 8 - langW,
+                Math.Max(10, (Height - buttonH) / 2),
+                langW,
                 buttonH
             );
         }
@@ -128,14 +165,14 @@ namespace JustVibrait.Monitor
             Ui.DrawLabel(g, "JustVibrait", brandFont, Palette.Text, textX, h * 0.15f);
             Ui.DrawLabel(
                 g,
-                "МОНИТОР ВИБРОМОТОРОВ · KOTIKTORTIKTECH",
+                Loc.T("header.subtitle"),
                 subtitleFont,
                 Palette.Muted,
                 textX + 1f,
                 h * 0.55f
             );
 
-            float rightEdge = w - 124f;
+            float rightEdge = w - 196f;
             float leftLimit = Math.Min(w * 0.40f, 430f);
             if (leftLimit < textX + 260f) leftLimit = textX + 260f;
             RectangleF deviceRect = new RectangleF(
@@ -187,7 +224,7 @@ namespace JustVibrait.Monitor
 
         public void SetDemo(bool value)
         {
-            demoButton.Text = value ? "СТОП" : "ДЕМО";
+            demoButton.Text = value ? Loc.T("header.stop") : Loc.T("header.demo");
             demoButton.BackColor = value ? Palette.Magenta : Palette.Card;
             demoButton.ForeColor = value ? Palette.Background : Palette.Text;
             demoButton.FlatAppearance.BorderColor = value ? Palette.Magenta : Palette.CardBorder;
@@ -375,7 +412,7 @@ namespace JustVibrait.Monitor
             }
 
             float p = Math.Max(14f, w * 0.045f);
-            Ui.DrawLabel(g, "СИГНАЛ", titleFont, Palette.Muted, p, 11f);
+            Ui.DrawLabel(g, Loc.T("metrics.signal"), titleFont, Palette.Muted, p, 11f);
 
             using (StringFormat far = new StringFormat())
             {
@@ -384,7 +421,7 @@ namespace JustVibrait.Monitor
                 using (SolidBrush brush = new SolidBrush(Palette.Dim))
                 {
                     g.DrawString(
-                        "АУДИОАНАЛИЗ",
+                        Loc.T("metrics.audio"),
                         subtitleFont,
                         brush,
                         new RectangleF(w * 0.5f, 12f, w * 0.5f - p, 16f),
@@ -397,17 +434,17 @@ namespace JustVibrait.Monitor
             float rowH = (h - top - 12f) / 5f;
             if (rowH < 20f) rowH = 20f;
 
-            DrawRow(g, 0, p, top, w, rowH, "БАС", connected ? Ui.Percent(bass) : "—",
+            DrawRow(g, 0, p, top, w, rowH, Loc.T("metrics.bass"), connected ? Ui.Percent(bass) : "—",
                 connected ? bass : 0f, Palette.Cyan);
-            DrawRow(g, 1, p, top, w, rowH, "УРОВЕНЬ", connected ? Ui.Percent(level) : "—",
+            DrawRow(g, 1, p, top, w, rowH, Loc.T("metrics.level"), connected ? Ui.Percent(level) : "—",
                 connected ? level : 0f, Palette.Green);
-            DrawRow(g, 2, p, top, w, rowH, "ТЕМП",
+            DrawRow(g, 2, p, top, w, rowH, Loc.T("metrics.tempo"),
                 connected ? bpm.ToString() + " BPM" : "—",
                 connected ? Math.Min(1f, bpm / 180f) : 0f,
                 beat ? Palette.Magenta : Palette.Blue);
-            DrawRow(g, 3, p, top, w, rowH, "ПОРОГ", connected ? Ui.Percent(threshold) : "—",
+            DrawRow(g, 3, p, top, w, rowH, Loc.T("metrics.threshold"), connected ? Ui.Percent(threshold) : "—",
                 connected ? threshold : 0f, Palette.Yellow);
-            DrawRow(g, 4, p, top, w, rowH, "ИНТЕНСИВНОСТЬ", connected ? Ui.Percent(intensity) : "—",
+            DrawRow(g, 4, p, top, w, rowH, Loc.T("metrics.intensity"), connected ? Ui.Percent(intensity) : "—",
                 connected ? intensity : 0f, Palette.Magenta);
         }
 

@@ -4,7 +4,7 @@
 
 <br><br>
 
-[![Release](https://img.shields.io/badge/Release-v1.1.0-35D6FF?style=for-the-badge)](https://github.com/121kirillmorti/justvibrait/releases/tag/v1.1.0)
+[![Release](https://img.shields.io/badge/Release-v1.2.0-35D6FF?style=for-the-badge)](https://github.com/121kirillmorti/justvibrait/releases/tag/v1.2.0)
 [![Android](https://img.shields.io/badge/Android-10%2B_%28API_29%29-3DDC84?style=for-the-badge)](https://developer.android.com/)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.0-7F52FF?style=for-the-badge)](https://kotlinlang.org/)
 [![Compose](https://img.shields.io/badge/Jetpack_Compose-Material3-FF4FD8?style=for-the-badge)](https://developer.android.com/jetpack/compose)
@@ -20,13 +20,17 @@
 
 <br>
 
-[![📱 Скачать APK](https://img.shields.io/badge/📱_Скачать_APK-Android-35D6FF?style=for-the-badge)](https://github.com/121kirillmorti/justvibrait/releases/tag/v1.1.0)
-[![🖥️ Скачать монитор для ПК](https://img.shields.io/badge/🖥️_Монитор_для_ПК-Windows-FF4FD8?style=for-the-badge)](https://github.com/121kirillmorti/justvibrait/releases/tag/v1.1.0)
+[![📱 Скачать APK](https://img.shields.io/badge/📱_Скачать_APK-Android-35D6FF?style=for-the-badge)](https://github.com/121kirillmorti/justvibrait/releases/tag/v1.2.0)
+[![🖥️ Скачать монитор для ПК](https://img.shields.io/badge/🖥️_Монитор_для_ПК-Windows-FF4FD8?style=for-the-badge)](https://github.com/121kirillmorti/justvibrait/releases/tag/v1.2.0)
 [![⭐ Поставить звезду](https://img.shields.io/badge/⭐_Поставить_звезду-GitHub-E8EFF9?style=for-the-badge&color=0F141C)](https://github.com/121kirillmorti/justvibrait)
 
 <br>
 
 **kotiktortiktech** · `com.kotiktortiktech.justvibrait` · Русский и English интерфейс
+
+<p>
+  <strong>🇷🇺 Русский</strong> · <a href="README.en.md">🇬🇧 English</a>
+</p>
 
 </div>
 
@@ -68,14 +72,26 @@
 - **Live:** «Слушаю микрофон» + переключатель «Звук системы / Микрофон».
 - **Настройки:** слайдеры интенсивности/чувствительности/задержки, радиопрофили, тема, Dynamic Color и «Отладка».
 
+### 🎬 Видео-превью
+
+Живое демо монитора на Windows (12 секунд, ДЕМО 126 BPM — шкала, карточки моторов
+и таймлайн в движении). GIF играет автоматически, полный MP4 — в релизе.
+
+<div align="center">
+  <img src="docs/preview.gif" alt="Видео-превью — монитор Windows в демо-режиме" width="100%">
+</div>
+
+[![▶️ Смотреть MP4 (12 с)](https://img.shields.io/badge/▶️_MP4-превью-12с-FF4FD8?style=for-the-badge)](docs/preview.mp4)
+[![⬇️ Скачать MP4](https://img.shields.io/badge/⬇️_Скачать_MP4-35D6FF?style=for-the-badge)](https://github.com/121kirillmorti/justvibrait/releases/tag/v1.2.0)
+
 ### 🖥️ Монитор на Windows (демо)
 
-Реальные рендеры приложения в демо-режиме (синтетическая телеметрия, 126 BPM, два мотора: основной и дополнительный).
+Реальные рендеры приложения в демо-режиме (синтетическая телеметрия, 126 BPM, два мотора: основной и дополнительный). Русский UI ниже, английский — справа. Переключить язык кнопкой **RU / EN** в шапке.
 
 | | |
 |:---:|:---:|
-| <img src="docs/screenshots/monitor-full.png" width="100%" alt="Монитор вибромоторов — полный экран"> | |
-| **Полный экран мониторинга.** Слева — шкала фактической вибрации по акселерометру и панель сигнала. Справа — карточки моторов и таймлайн 15 секунд (голубой — факт, розовый — команда). | |
+| <img src="docs/screenshots/monitor-full.png" width="100%" alt="Монитор вибромоторов — полный экран (русский UI)"> | <img src="docs/screenshots/monitor-full-en.png" width="100%" alt="Windows monitor full screen (English UI)"> |
+| **Русский UI.** Слева — шкала фактической вибрации по акселерометру и панель сигнала. Справа — карточки моторов и таймлайн 15 секунд (голубой — факт, розовый — команда). | **English UI.** Same screen with the RU / EN toggle in the header. |
 
 | Шкала факта | Команды моторов |
 |:---:|:---:|
@@ -118,13 +134,14 @@
 ### 🎨 Интерфейс
 - Material 3 (тёмная/светлая/системная тема), **Material You / Dynamic Color** на Android 12+.
 - Карточки, сегменты, слайдеры, FAB, нижняя навигация и живой визуализатор спектра.
-- Локализация: русский (по умолчанию) и английский (`values-en`).
+- Локализация: русский и английский. В приложении — **Настройки → Оформление → Язык**: Системный / Русский / English (per-app locale, сохраняется после перезапуска).
 
 ### 🖥️ Отладка на ПК
 - Опциональная UDP-телеметрия (порт **45454**) для настольного монитора.
 - Каждому мотору: id, команда 0–255, длительность; плюс независимая оценка вибрации по акселерометру.
 - Вкл. в **Настройки → Отладка → Монитор на ПК** (по умолчанию выключено). IP из монитора или широковещание.
 - Windows-дашборд: шкала факта, карточки моторов, таймлайн, демо-режим с двумя моторами.
+- Монитор двуязычный: определяют язык Windows, запоминает выбор, переключается кнопкой **RU / EN** (`--lang=ru` / `--lang=en`).
 
 ---
 
@@ -155,17 +172,18 @@ flowchart LR
 
 | | |
 |---|---|
-| **Скачать APK** | [GitHub Release v1.1.0](https://github.com/121kirillmorti/justvibrait/releases/tag/v1.1.0) — `JustVibrait-1.1.0-release.apk` |
-| **Установить** | `adb install -r JustVibrait-1.1.0-release.apk` или установка из файла |
+| **Скачать APK** | [GitHub Release v1.2.0](https://github.com/121kirillmorti/justvibrait/releases/tag/v1.2.0) — `JustVibrait-1.2.0-release.apk` |
+| **Установить** | `adb install -r JustVibrait-1.2.0-release.apk` или установка из файла |
 | **Проверка** | SHA-256 в релизе + `apksigner verify --print-certs` (CN=kotiktortiktech) |
 
 ### 🖥️ Монитор для ПК
 
 | | |
 |---|---|
-| **Скачать** | [GitHub Release v1.1.0](https://github.com/121kirillmorti/justvibrait/releases/tag/v1.1.0) — `JustVibraitMotorMonitor-1.0.0-win.zip` |
+| **Скачать** | [GitHub Release v1.2.0](https://github.com/121kirillmorti/justvibrait/releases/tag/v1.2.0) — `JustVibraitMotorMonitor-1.1.0-win.zip` |
 | **Запуск** | Распакуйте и запустите `JustVibraitMotorMonitor.exe` |
 | **Проверка без телефона** | Кнопка **ДЕМО** или `JustVibraitMotorMonitor.exe --demo` |
+| **Язык** | Кнопка **RU / EN** в шапке или `--lang=ru` / `--lang=en` |
 
 ---
 
@@ -279,8 +297,8 @@ Release подписывается ключом `keystore/justvibrait-release.jk
 Проверка:
 
 ```powershell
-& "$env:ANDROID_HOME\build-tools\35.0.0\apksigner.bat" verify --verbose --print-certs dist\JustVibrait-1.1.0-release.apk
-& "$env:ANDROID_HOME\build-tools\35.0.0\aapt2.exe" dump badging dist\JustVibrait-1.1.0-release.apk
+& "$env:ANDROID_HOME\build-tools\35.0.0\apksigner.bat" verify --verbose --print-certs dist\JustVibrait-1.2.0-release.apk
+& "$env:ANDROID_HOME\build-tools\35.0.0\aapt2.exe" dump badging dist\JustVibrait-1.2.0-release.apk
 ```
 
 ---

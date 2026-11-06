@@ -73,7 +73,7 @@ namespace JustVibrait.Monitor
             }
 
             float p = Math.Max(14f, w * 0.02f);
-            Ui.DrawLabel(g, "ТАЙМЛАЙН · 15 СЕКУНД", titleFont, Palette.Muted, p, 12f);
+            Ui.DrawLabel(g, Loc.T("timeline.title"), titleFont, Palette.Muted, p, 12f);
 
             DrawLegend(g, w, p);
 
@@ -137,7 +137,7 @@ namespace JustVibrait.Monitor
                     using (SolidBrush brush = new SolidBrush(Palette.Dim))
                     {
                         g.DrawString(
-                            "НЕТ ДАННЫХ · ВКЛЮЧИТЕ ТЕЛЕМЕТРИЮ",
+                            Loc.T("timeline.noData"),
                             legendFont,
                             brush,
                             plot,
@@ -214,19 +214,19 @@ namespace JustVibrait.Monitor
         private void DrawLegend(Graphics g, float width, float padding)
         {
             RectangleF area = new RectangleF(width * 0.45f, 11f, width - padding - width * 0.45f, 18f);
-            SizeF commandSize = g.MeasureString("КОМАНДА", legendFont);
-            SizeF factSize = g.MeasureString("ФАКТ", legendFont);
+            SizeF commandSize = g.MeasureString(Loc.T("timeline.command"), legendFont);
+            SizeF factSize = g.MeasureString(Loc.T("timeline.fact"), legendFont);
             float commandX = area.Right - commandSize.Width;
             float factX = commandX - 18f - factSize.Width;
             DrawDot(g, factX - 12f, 17f, Palette.Cyan);
             using (SolidBrush brush = new SolidBrush(Palette.Muted))
             {
-                g.DrawString("ФАКТ", legendFont, brush, factX, 11f);
+                g.DrawString(Loc.T("timeline.fact"), legendFont, brush, factX, 11f);
             }
             DrawDot(g, commandX - 12f, 17f, Palette.Magenta);
             using (SolidBrush brush = new SolidBrush(Palette.Muted))
             {
-                g.DrawString("КОМАНДА", legendFont, brush, commandX, 11f);
+                g.DrawString(Loc.T("timeline.command"), legendFont, brush, commandX, 11f);
             }
         }
 
@@ -240,7 +240,8 @@ namespace JustVibrait.Monitor
 
         private void DrawTimeLabels(Graphics g, RectangleF plot)
         {
-            string[] labels = new string[] { "-15 с", "-10 с", "-5 с", "сейчас" };
+            string sec = Loc.IsRussian ? "с" : "s";
+            string[] labels = new string[] { "-15 " + sec, "-10 " + sec, "-5 " + sec, Loc.T("timeline.now") };
             using (StringFormat centered = new StringFormat())
             {
                 centered.Alignment = StringAlignment.Center;

@@ -9,14 +9,15 @@ namespace JustVibrait.Monitor
         [STAThread]
         private static void Main(string[] args)
         {
+            ApplyLanguageArgs(args);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
             Application.ThreadException += delegate(object sender, ThreadExceptionEventArgs e)
             {
                 MessageBox.Show(
-                    "Ошибка интерфейса:\r\n" + e.Exception.Message,
-                    "JustVibrait · Монитор вибромоторов",
+                    Loc.T("prog.uiError") + e.Exception.Message,
+                    Loc.T("form.title"),
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
@@ -29,9 +30,9 @@ namespace JustVibrait.Monitor
             {
                 Exception error = e.ExceptionObject as Exception;
                 MessageBox.Show(
-                    "Непредвиденная ошибка:\r\n" +
-                    (error == null ? "неизвестно" : error.Message),
-                    "JustVibrait · Монитор вибромоторов",
+                    Loc.T("prog.unexpected") +
+                    (error == null ? Loc.T("prog.unknown") : error.Message),
+                    Loc.T("form.title"),
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
@@ -46,6 +47,22 @@ namespace JustVibrait.Monitor
                 }
             }
             Application.Run(form);
+        }
+
+        private static void ApplyLanguageArgs(string[] args)
+        {
+            for (int i = 0; i < args.Length; i++)
+            {
+                string arg = args[i].ToLowerInvariant();
+                if (arg == "--lang=ru" || arg == "/lang=ru" || arg == "--ru")
+                {
+                    Loc.SetLanguage(MonitorLanguage.Russian);
+                }
+                else if (arg == "--lang=en" || arg == "/lang=en" || arg == "--en")
+                {
+                    Loc.SetLanguage(MonitorLanguage.English);
+                }
+            }
         }
     }
 }

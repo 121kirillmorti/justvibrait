@@ -46,6 +46,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.kotiktortiktech.justvibrait.BuildConfig
 import com.kotiktortiktech.justvibrait.R
+import com.kotiktortiktech.justvibrait.data.AppLanguage
 import com.kotiktortiktech.justvibrait.data.AppSettings
 import com.kotiktortiktech.justvibrait.data.ThemeMode
 import com.kotiktortiktech.justvibrait.data.VibeProfile
@@ -63,6 +64,7 @@ fun SettingsScreen(
     onProfileChange: (VibeProfile) -> Unit,
     onThemeChange: (ThemeMode) -> Unit,
     onDynamicColorChange: (Boolean) -> Unit,
+    onLanguageChange: (AppLanguage) -> Unit,
     onTelemetryEnabledChange: (Boolean) -> Unit,
     onTelemetryHostChange: (String) -> Unit,
     onReset: () -> Unit,
@@ -89,8 +91,10 @@ fun SettingsScreen(
         AppearanceCard(
             themeMode = settings.themeMode,
             dynamicColor = settings.dynamicColor,
+            language = settings.language,
             onThemeChange = onThemeChange,
-            onDynamicColorChange = onDynamicColorChange
+            onDynamicColorChange = onDynamicColorChange,
+            onLanguageChange = onLanguageChange
         )
         DebugCard(
             settings = settings,
@@ -355,8 +359,10 @@ private fun ProfileRow(
 private fun AppearanceCard(
     themeMode: ThemeMode,
     dynamicColor: Boolean,
+    language: AppLanguage,
     onThemeChange: (ThemeMode) -> Unit,
-    onDynamicColorChange: (Boolean) -> Unit
+    onDynamicColorChange: (Boolean) -> Unit,
+    onLanguageChange: (AppLanguage) -> Unit
 ) {
     Card(
         shape = MaterialTheme.shapes.large,
@@ -381,6 +387,37 @@ private fun AppearanceCard(
                         shape = SegmentedButtonDefaults.itemShape(
                             index = index,
                             count = modes.size
+                        ),
+                        label = {
+                            Text(
+                                text = stringResource(item.labelRes()),
+                                maxLines = 1,
+                                overflow = TextOverflow.Ellipsis
+                            )
+                        }
+                    )
+                }
+            }
+            Spacer(Modifier.height(18.dp))
+            Text(
+                text = stringResource(R.string.language_label),
+                style = MaterialTheme.typography.titleSmall
+            )
+            Text(
+                text = stringResource(R.string.language_desc),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+            Spacer(Modifier.height(8.dp))
+            val languages = AppLanguage.entries
+            SingleChoiceSegmentedButtonRow(modifier = Modifier.fillMaxWidth()) {
+                languages.forEachIndexed { index, item ->
+                    SegmentedButton(
+                        selected = language == item,
+                        onClick = { onLanguageChange(item) },
+                        shape = SegmentedButtonDefaults.itemShape(
+                            index = index,
+                            count = languages.size
                         ),
                         label = {
                             Text(

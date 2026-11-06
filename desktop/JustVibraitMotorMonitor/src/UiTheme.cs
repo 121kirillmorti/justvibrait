@@ -77,22 +77,17 @@ namespace JustVibrait.Monitor
 
         public static string SourceLabel(string source)
         {
-            if (source == "SYSTEM") return "Системный звук";
-            if (source == "MIC") return "Микрофон";
-            return "Локальный файл";
+            return Loc.SourceLabel(source);
         }
 
         public static string ProfileLabel(string profile)
         {
-            if (profile == "SOFT") return "Мягкий";
-            if (profile == "SHARP") return "Резкий";
-            if (profile == "DYNAMIC") return "Динамический";
-            return profile;
+            return Loc.ProfileLabel(profile);
         }
 
         public static string DeviceLabel(TelemetryPacket packet)
         {
-            if (packet == null) return "нет устройства";
+            if (packet == null) return Loc.T("ui.noDevice");
             if (string.IsNullOrEmpty(packet.AndroidVersion)) return packet.Device;
             return packet.Device + "  ·  Android " + packet.AndroidVersion;
         }

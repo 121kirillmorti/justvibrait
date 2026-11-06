@@ -94,6 +94,11 @@
     <string name="dynamic_color">Dynamic Color</string>
     <string name="dynamic_color_desc">Material You colors from your wallpaper and system palette</string>
     <string name="dynamic_color_unsupported">Requires Android 12 or newer</string>
+    <string name="language_label">Language</string>
+    <string name="language_desc">Follows the system or choose manually</string>
+    <string name="language_system">System</string>
+    <string name="language_russian">Русский</string>
+    <string name="language_english">English</string>
     <string name="about_section">About</string>
     <string name="about_developer">Developer</string>
     <string name="about_version">Version</string>

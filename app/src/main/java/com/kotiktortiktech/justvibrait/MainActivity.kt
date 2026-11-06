@@ -13,6 +13,13 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        LanguageHelper.apply(
+            com.kotiktortiktech.justvibrait.data.SettingsRepository
+                .get(this)
+                .state
+                .value
+                .language
+        )
         enableEdgeToEdge()
         setContent {
             val viewModel: MainViewModel = viewModel()

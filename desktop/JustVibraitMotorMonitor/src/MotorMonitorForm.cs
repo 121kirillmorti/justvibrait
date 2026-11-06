@@ -57,7 +57,7 @@ namespace JustVibrait.Monitor
         private string emptySubtitle = "";
 
         public MotorMonitorForm()
-        {            Text = "JustVibrait · Монитор вибромоторов";
+        {            Text = Loc.T("form.title");
             StartPosition = FormStartPosition.CenterScreen;
             ClientSize = new Size(1320, 860);
             MinimumSize = new Size(1080, 740);
@@ -72,6 +72,7 @@ namespace JustVibrait.Monitor
 
             header = new HeaderBar();
             header.DemoClicked += ToggleDemo;
+            header.LanguageClicked += ToggleLanguage;
 
             status = new StatusBar();
             gauge = new ArcGauge();
@@ -248,7 +249,7 @@ namespace JustVibrait.Monitor
             TelemetryPacket packet = new TelemetryPacket();
             packet.Sequence = demoSequence++;
             packet.UptimeMs = (long)(seconds * 1000.0);
-            packet.Device = "Pixel 8 Pro · демо";
+            packet.Device = Loc.T("form.demoDevice");
             packet.AndroidVersion = "15";
             packet.Sdk = 35;
             packet.Source = "SYSTEM";
@@ -412,31 +413,30 @@ namespace JustVibrait.Monitor
             if (live && bestAmplitude > 0)
             {
                 gauge.SetEvent(
-                    "импульс · мотор " + bestId + " · " + bestDuration +
-                    " мс · " + bestAmplitude + " / 255"
+                    Loc.F("gauge.pulseFmt", bestId.ToString(), bestDuration.ToString(), bestAmplitude.ToString())
                 );
             }
             else if (live)
             {
-                gauge.SetEvent("ожидание следующего импульса");
+                gauge.SetEvent(Loc.T("gauge.waitingNext"));
             }
             else if (packet != null)
             {
-                gauge.SetEvent("телефон не отвечает · проверьте Wi-Fi и UDP 45454");
+                gauge.SetEvent(Loc.T("gauge.noAnswer"));
             }
             else
             {
-                gauge.SetEvent("импульсов ещё не было");
+                gauge.SetEvent(Loc.T("gauge.noPulses"));
             }
 
-            string device = packet == null ? "нет телефона" : packet.Device;
-            string detail = "ПК " + pcAddress + " · UDP " + TelemetryPort;
+            string device = packet == null ? Loc.T("header.noPhone") : packet.Device;
+            string detail = Loc.F("header.pcFmt", pcAddress, TelemetryPort.ToString());
             if (live)
             {
                 detail += " · " + Ui.SourceLabel(packet.Source) +
                     " · " + Ui.ProfileLabel(packet.Profile);
             }
-            if (demoMode) detail += " · ДЕМО";
+            if (demoMode) detail += Loc.T("header.demoSuffix");
             header.SetState(device, detail, connected, demoMode);
             header.SetDemo(demoMode);
 
@@ -446,15 +446,15 @@ namespace JustVibrait.Monitor
                 if (live)
                 {
                     SetEmptyMessage(
-                        "МОТОРЫ НЕ ОБНАРУЖЕНЫ",
-                        "Устройство не сообщило ни одного вибромотора. Возможно, оно не поддерживает вибрацию."
+                        Loc.T("empty.noMotorsTitle"),
+                        Loc.T("empty.noMotorsBody")
                     );
                 }
                 else
                 {
                     SetEmptyMessage(
-                        "ОЖИДАНИЕ ПЕРВОГО ПАКЕТА",
-                        "Включите «Монитор на ПК» в настройках приложения и подключите телефон к той же Wi-Fi сети."
+                        Loc.T("empty.waitTitle"),
+                        Loc.T("empty.waitBody")
                     );
                 }
             }
@@ -484,24 +484,26 @@ namespace JustVibrait.Monitor
             Color dot;
             if (demoMode)
             {
-                left = "ДЕМО-РЕЖИМ · синтетическая телеметрия для проверки интерфейса";
+                left = Loc.T("status.demo");
                 dot = Palette.Magenta;
             }
             else if (live)
             {
-                left = "Телеметрия активна · " + Ui.SourceLabel(packet.Source) +
-                    " · профиль " + Ui.ProfileLabel(packet.Profile);
+                left = Loc.F(
+                    "status.liveFmt",
+                    Ui.SourceLabel(packet.Source),
+                    Ui.ProfileLabel(packet.Profile)
+                );
                 dot = Palette.Green;
             }
             else if (!string.IsNullOrEmpty(listenerError))
             {
-                left = "UDP " + TelemetryPort + " недоступен: " + listenerError;
+                left = Loc.F("status.udpErrorFmt", TelemetryPort.ToString(), listenerError);
                 dot = Palette.Red;
             }
             else
             {
-                left = "Ожидание телефона · Настройки → Отладка → Монитор на ПК (UDP " +
-                    TelemetryPort + ")";
+                left = Loc.F("status.waitingFmt", TelemetryPort.ToString());
                 dot = Palette.Yellow;
             }
 
@@ -509,11 +511,11 @@ namespace JustVibrait.Monitor
             if (live)
             {
                 double age = MillisecondsSince(lastPacketTick, now);
-                right = rate.ToString() + " пак/с · " + ((int)age).ToString() + " мс назад";
+                right = Loc.F("status.rateFmt", rate.ToString(), ((int)age).ToString());
             }
             else
             {
-                right = "ПК " + pcAddress + " · UDP " + TelemetryPort;
+                right = Loc.F("status.pcFmt", pcAddress, TelemetryPort.ToString());
             }
             status.SetState(left, right, dot);
 
@@ -645,6 +647,32 @@ namespace JustVibrait.Monitor
         {
             demoMode = !demoMode;
             ApplyDemoState();
+        }
+
+        private void ToggleLanguage(object sender, EventArgs e)
+        {
+            Loc.Toggle();
+            ApplyLanguage();
+        }
+
+        public void SetLanguage(MonitorLanguage language)
+        {
+            Loc.SetLanguage(language);
+            ApplyLanguage();
+        }
+
+        private void ApplyLanguage()
+        {
+            Text = Loc.T("form.title");
+            header.UpdateLangButton();
+            header.SetDemo(demoMode);
+            emptyTitle = "";
+            emptySubtitle = "";
+            emptyCard.SetMessage(Loc.T("empty.waitTitle"), Loc.T("empty.waitBody"));
+            for (int i = 0; i < Controls.Count; i++)
+            {
+                Controls[i].Invalidate(true);
+            }
         }
 
         public void StartInDemoMode()

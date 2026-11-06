@@ -12,6 +12,12 @@ enum class ThemeMode {
     DARK
 }
 
+enum class AppLanguage {
+    SYSTEM,
+    RUSSIAN,
+    ENGLISH
+}
+
 data class AppSettings(
     val intensity: Float = 0.72f,
     val sensitivity: Float = 0.55f,
@@ -20,7 +26,8 @@ data class AppSettings(
     val themeMode: ThemeMode = ThemeMode.SYSTEM,
     val dynamicColor: Boolean = true,
     val telemetryEnabled: Boolean = false,
-    val telemetryHost: String = ""
+    val telemetryHost: String = "",
+    val language: AppLanguage = AppLanguage.SYSTEM
 ) {
     /** Normalized amplitude threshold used by the beat detector and haptics. */
     val triggerThreshold: Float

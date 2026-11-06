@@ -327,6 +327,7 @@ fun JustVibraitApp(viewModel: MainViewModel) {
                     onProfileChange = viewModel::setProfile,
                     onThemeChange = viewModel::setThemeMode,
                     onDynamicColorChange = viewModel::setDynamicColor,
+                    onLanguageChange = viewModel::setLanguage,
                     onTelemetryEnabledChange = viewModel::setTelemetryEnabled,
                     onTelemetryHostChange = viewModel::setTelemetryHost,
                     onReset = {

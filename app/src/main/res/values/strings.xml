@@ -94,6 +94,11 @@
     <string name="dynamic_color">Dynamic Color</string>
     <string name="dynamic_color_desc">Цвета Material You из обоев и системной палитры</string>
     <string name="dynamic_color_unsupported">Нужен Android 12 или новее</string>
+    <string name="language_label">Язык</string>
+    <string name="language_desc">Автоматически по системе или выбрать вручную</string>
+    <string name="language_system">Системный</string>
+    <string name="language_russian">Русский</string>
+    <string name="language_english">English</string>
     <string name="about_section">О приложении</string>
     <string name="about_developer">Разработчик</string>
     <string name="about_version">Версия</string>

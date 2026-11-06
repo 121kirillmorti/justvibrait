@@ -103,13 +103,13 @@ namespace JustVibrait.Monitor
             float p = Math.Max(12f, h * 0.13f);
             float topY = h * 0.085f;
 
-            string label = motorId >= 0 ? "МОТОР " + motorId : "МОТОР";
+            string label = motorId >= 0 ? Loc.T("motor.label") + " " + motorId : Loc.T("motor.label");
             Ui.DrawLabel(g, label, labelFont, Palette.Muted, p, topY);
 
             if (motorId >= 0)
             {
                 SizeF labelSize = g.MeasureString(label, labelFont);
-                string tag = isDefault ? "ОСНОВНОЙ" : "ДОПОЛНИТЕЛЬНЫЙ";
+                string tag = isDefault ? Loc.T("motor.primary") : Loc.T("motor.secondary");
                 Color tagColor = isDefault
                     ? Palette.Cyan
                     : (hasAmplitudeControl ? Palette.Blue : Palette.Dim);
@@ -157,8 +157,8 @@ namespace JustVibrait.Monitor
 
             int amplitude = (int)Math.Round(display * 255f);
             string command = motorId < 0
-                ? "НЕТ ДАННЫХ"
-                : "КОМАНДА " + amplitude.ToString() + " / 255";
+                ? Loc.T("motor.noData")
+                : Loc.F("motor.cmdFmt", amplitude.ToString());
             Ui.DrawLabel(
                 g,
                 command,
@@ -215,16 +215,16 @@ namespace JustVibrait.Monitor
             }
 
             string capability = !hasAmplitudeControl
-                ? "амплитуда не управляется · вкл/выкл"
-                : "амплитуда управляема · 1–255";
-            if (motorId < 0) capability = "подключите телефон";
+                ? Loc.T("motor.noAmp")
+                : Loc.T("motor.hasAmp");
+            if (motorId < 0) capability = Loc.T("motor.connect");
             Ui.DrawLabel(g, capability, tinyFont, Palette.Dim, p, h * 0.80f);
 
             if (motorId >= 0)
             {
                 string pulse = durationMs > 0
-                    ? "ИМПУЛЬС " + durationMs.ToString() + " МС"
-                    : "ОЖИДАНИЕ";
+                    ? Loc.F("motor.pulseFmt", durationMs.ToString())
+                    : Loc.T("motor.waiting");
                 using (StringFormat far = new StringFormat())
                 {
                     far.Alignment = StringAlignment.Far;
@@ -275,9 +275,8 @@ namespace JustVibrait.Monitor
     /// <summary>Placeholder shown before the first packet creates motor cards.</summary>
     public sealed class EmptyStateCard : Control
     {
-        private string title = "ОЖИДАНИЕ ПЕРВОГО ПАКЕТА";
-        private string subtitle =
-            "Включите «Монитор на ПК» в настройках приложения и подключите телефон к той же Wi-Fi сети.";
+        private string title = Loc.T("empty.waitTitle");
+        private string subtitle = Loc.T("empty.waitBody");
 
         private readonly Font titleFont;
         private readonly Font bodyFont;

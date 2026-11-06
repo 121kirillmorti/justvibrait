@@ -5,6 +5,7 @@ import android.net.Uri
 import android.view.SurfaceView
 import androidx.lifecycle.AndroidViewModel
 import com.kotiktortiktech.justvibrait.data.AppSettings
+import com.kotiktortiktech.justvibrait.data.AppLanguage
 import com.kotiktortiktech.justvibrait.data.SettingsRepository
 import com.kotiktortiktech.justvibrait.data.VibeProfile
 import com.kotiktortiktech.justvibrait.debug.VibeTelemetry
@@ -65,6 +66,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     fun setDynamicColor(enabled: Boolean) {
         settingsRepository.update { it.copy(dynamicColor = enabled) }
+    }
+
+    fun setLanguage(language: AppLanguage) {
+        settingsRepository.update { it.copy(language = language) }
+        LanguageHelper.apply(language)
     }
 
     fun setTelemetryEnabled(enabled: Boolean) {

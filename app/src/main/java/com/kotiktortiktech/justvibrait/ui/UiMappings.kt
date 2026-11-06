@@ -2,6 +2,7 @@ package com.kotiktortiktech.justvibrait.ui
 
 import androidx.annotation.StringRes
 import com.kotiktortiktech.justvibrait.R
+import com.kotiktortiktech.justvibrait.data.AppLanguage
 import com.kotiktortiktech.justvibrait.data.ThemeMode
 import com.kotiktortiktech.justvibrait.data.VibeProfile
 import com.kotiktortiktech.justvibrait.media.LocalError
@@ -41,4 +42,11 @@ fun ThemeMode.labelRes(): Int = when (this) {
     ThemeMode.SYSTEM -> R.string.theme_system
     ThemeMode.LIGHT -> R.string.theme_light
     ThemeMode.DARK -> R.string.theme_dark
+}
+
+@StringRes
+fun AppLanguage.labelRes(): Int = when (this) {
+    AppLanguage.SYSTEM -> R.string.language_system
+    AppLanguage.RUSSIAN -> R.string.language_russian
+    AppLanguage.ENGLISH -> R.string.language_english
 }
