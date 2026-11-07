@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/screenshots/cover.png" alt="JustVibrait — вибрация в такт музыке (логотип и интерфейс телефона)" width="100%">
+<img src="docs/screenshots/cover-en.png" alt="JustVibrait — Vibration synced to music (app logo and phone UI)" width="100%">
 
 <br><br>
 
@@ -13,236 +13,241 @@
 
 # JustVibrait
 
-### Вибрация в такт музыке
+### Vibration synced to music
 
-Анализирует звук в реальном времени и превращает бас в синхронизированные импульсы вибромотора.
-На ПК — живой мониторинг: команда каждому мотору, факт по акселерометру и таймлайн 15 секунд.
-
-<br>
-
-[![📱 Скачать APK](https://img.shields.io/badge/📱_Скачать_APK-Android-35D6FF?style=for-the-badge)](https://github.com/121kirillmorti/justvibrait/releases/tag/v1.2.0)
-[![🖥️ Скачать монитор для ПК](https://img.shields.io/badge/🖥️_Монитор_для_ПК-Windows-FF4FD8?style=for-the-badge)](https://github.com/121kirillmorti/justvibrait/releases/tag/v1.2.0)
-[![⭐ Поставить звезду](https://img.shields.io/badge/⭐_Поставить_звезду-GitHub-E8EFF9?style=for-the-badge&color=0F141C)](https://github.com/121kirillmorti/justvibrait)
+Analyzes sound in real time and turns bass into synchronized vibrator pulses.
+On PC — live monitoring: command per motor, accelerometer actual value and 15-second timeline.
 
 <br>
 
-**kotiktortiktech** · `com.kotiktortiktech.justvibrait` · Русский и English интерфейс
+[![📱 Download APK](https://img.shields.io/badge/📱_Download_APK-Android-35D6FF?style=for-the-badge)](https://github.com/121kirillmorti/justvibrait/releases/tag/v1.2.0)
+[![🖥️ Download PC monitor](https://img.shields.io/badge/🖥️_PC_monitor-Windows-FF4FD8?style=for-the-badge)](https://github.com/121kirillmorti/justvibrait/releases/tag/v1.2.0)
+[![⭐ Star](https://img.shields.io/badge/⭐_Star-GitHub-E8EFF9?style=for-the-badge&color=0F141C)](https://github.com/121kirillmorti/justvibrait)
+
+<br>
+
+**kotiktortiktech** · `com.kotiktortiktech.justvibrait` · English and Russian UI
 
 <p>
-  <strong>🇷🇺 Русский</strong> · <a href="README.en.md">🇬🇧 English</a>
+  <a href="README.ru.md">🇷🇺 Русский</a> · <strong>🇬🇧 English</strong>
 </p>
 
 </div>
 
 <p align="center">
-<a href="#-скриншоты">📸 Скриншоты</a> ·
-<a href="#-возможности">✨ Возможности</a> ·
-<a href="#-как-это-работает">⚙️ Как это работает</a> ·
-<a href="#-установка">🚀 Установка</a> ·
-<a href="#-монитор-на-пк">🖥️ Монитор на ПК</a> ·
-<a href="#-сборка-из-исходников">🔨 Сборка</a>
+<a href="#-screenshots">📸 Screenshots</a> ·
+<a href="#-features">✨ Features</a> ·
+<a href="#-how-it-works">⚙️ How it works</a> ·
+<a href="#-install">🚀 Install</a> ·
+<a href="#-pc-monitor">🖥️ PC monitor</a> ·
+<a href="#-building-from-source">🔨 Build</a>
 </p>
 
 ---
 
-## 📸 Скриншоты
+## 📸 Screenshots
 
-> Живые скриншоты Android-приложения с устройства (тёмная тема Dynamic Color) и
-> реальный рендер монитора на Windows в демо-режиме. Вся галерея — в `docs/screenshots/`.
+> Live screenshots from a device (dark Dynamic Color theme) and a real Windows monitor
+> render in demo mode. Full gallery — in `docs/screenshots/`.
+> The phone UI in screenshots is Russian (as captured); switch it to English in
+> **Settings → Appearance → Language**. The PC monitor has a **RU / EN** button.
 
 <div align="center">
-  <img src="docs/screenshots/showcase-card.png" alt="JustVibrait вживую — Файл, Live, Настройки" width="100%">
+  <img src="docs/screenshots/showcase-card.png" alt="JustVibrait live — File, Live, Settings" width="100%">
 </div>
 
 ### 📱 Android
 
-| 📁 Файл —готов к запуску | 🎙️ Live — слушаю микрофон | ⚙️ Настройки — вибрация |
+| 📁 File — ready to start | 🎙️ Live — listening to mic | ⚙️ Settings — vibration |
 |:---:|:---:|:---:|
-| <img src="docs/screenshots/app-local.png" width="100%" alt="Файл — готов к запуску, ничего не выбрано"> | <img src="docs/screenshots/app-live.png" width="100%" alt="Live — слушаю микрофон, BPM 73"> | <img src="docs/screenshots/app-settings.png" width="100%" alt="Настройки — интенсивность 100%, чувствительность 69%, задержка 0 мс"> |
-| «Ничего не выбрано» → **Открыть файл** (MP3/FLAC/WAV/MP4/MKV). Сверху — «Готово к запуску». | Источник «Микрофон», таймер `00:02`, **Остановить**. BPM 73, громкость 75%. | Интенсивность 100% · Чувствительность 69% · Задержка 0 мс. |
+| <img src="docs/screenshots/app-local.png" width="100%" alt="File — ready, nothing selected"> | <img src="docs/screenshots/app-live.png" width="100%" alt="Live — listening to microphone, BPM 73"> | <img src="docs/screenshots/app-settings.png" width="100%" alt="Settings — intensity 100%, sensitivity 69%, delay 0 ms"> |
+| “Nothing selected” → **Open file** (MP3/FLAC/WAV/MP4/MKV). Top: “Ready to start”. | Source “Microphone”, timer `00:02`, **Stop**. BPM 73, level 75%. | Intensity 100% · Sensitivity 69% · Delay 0 ms. |
 
-| 🎨 Профиль и тема | 🖥️ Отладка — монитор на ПК | |
+| 🎨 Profile and theme | 🖥️ Debug — PC monitor | |
 |:---:|:---:|:---:|
-| <img src="docs/screenshots/app-profile.png" width="100%" alt="Профиль вибрации Динамический, оформление, тема Системная, Dynamic Color"> | <img src="docs/screenshots/app-debug.png" width="100%" alt="Отладка — Монитор на ПК UDP 45454, IP компьютера, About kotiktortiktech"> | |
-| **Мягкий / Резкий / Динамический** (выбран). Тема: Системная/Светлая/Тёмная, Dynamic Color включён. | **Монитор на ПК** включён (UDP 45454), поле IP, объяснение про акселерометр. Снизу — About: `kotiktortiktech`. | |
+| <img src="docs/screenshots/app-profile.png" width="100%" alt="Vibration profile Dynamic, appearance, System theme, Dynamic Color"> | <img src="docs/screenshots/app-debug.png" width="100%" alt="Debug — PC monitor UDP 45454, computer IP, About kotiktortiktech"> | |
+| **Soft / Sharp / Dynamic** (selected). Theme: System / Light / Dark, Dynamic Color on. | **PC monitor** on (UDP 45454), IP field, accelerometer note. Below: About `kotiktortiktech`. | |
 
-**Что на экранах:**
-- Навигация внизу: **Файл · Live · Настройки** (активная подсвечена).
-- **Файл:** пустое состояние + «Живой анализ: низкие частоты и атаки».
-- **Live:** «Слушаю микрофон» + переключатель «Звук системы / Микрофон».
-- **Настройки:** слайдеры интенсивности/чувствительности/задержки, радиопрофили, тема, Dynamic Color и «Отладка».
+**What is on the screens:**
+- Bottom navigation: **File · Live · Settings** (active highlighted).
+- **File:** empty state + “Live analysis: low frequencies and attacks”.
+- **Live:** “Listening to microphone” + “System sound / Microphone” switch.
+- **Settings:** intensity / sensitivity / delay sliders, radio profiles, theme, Dynamic Color and “Debug”.
 
-### 🖥️ Монитор на Windows (демо)
+### 🖥️ Windows monitor (demo)
 
-Реальные рендеры приложения в демо-режиме (синтетическая телеметрия, 126 BPM, два мотора: основной и дополнительный). Русский UI ниже, английский — справа. Переключить язык кнопкой **RU / EN** в шапке.
+Real renders in demo mode (synthetic telemetry, 126 BPM, two motors: primary and secondary).
 
 | | |
 |:---:|:---:|
-| <img src="docs/screenshots/monitor-full.png" width="100%" alt="Монитор вибромоторов — полный экран (русский UI)"> | <img src="docs/screenshots/monitor-full-en.png" width="100%" alt="Windows monitor full screen (English UI)"> |
-| **Русский UI.** Слева — шкала фактической вибрации по акселерометру и панель сигнала. Справа — карточки моторов и таймлайн 15 секунд (голубой — факт, розовый — команда). | **English UI.** Same screen with the RU / EN toggle in the header. |
+| <img src="docs/screenshots/monitor-full-en.png" width="100%" alt="Windows monitor full screen (English)"> | |
+| **Full monitor (English UI).** Left — actual vibration scale + signal panel. Right — motor cards and 15-second timeline (cyan — actual, pink — command). Switch language with **RU / EN** in the header. | |
 
-| Шкала факта | Команды моторов |
+| Actual scale | Motor commands |
 |:---:|:---:|
-| <img src="docs/screenshots/monitor-gauge.png" width="100%" alt="Шкала фактической вибрации"> | <img src="docs/screenshots/monitor-cards.png" width="100%" alt="Карточки вибромоторов"> |
+| <img src="docs/screenshots/monitor-gauge.png" width="100%" alt="Actual vibration scale (Russian UI)"> | <img src="docs/screenshots/monitor-cards.png" width="100%" alt="Vibrator motor cards (Russian UI)"> |
 
-| Таймлайн 15 секунд | Аудио-сигнал |
+| 15-second timeline | Audio signal |
 |:---:|:---:|
-| <img src="docs/screenshots/monitor-timeline.png" width="100%" alt="Таймлайн факт и команда"> | <img src="docs/screenshots/monitor-metrics.png" width="100%" alt="Панель сигнала бас уровень BPM"> |
+| <img src="docs/screenshots/monitor-timeline.png" width="100%" alt="Timeline actual vs command (Russian UI)"> | <img src="docs/screenshots/monitor-metrics.png" width="100%" alt="Signal panel bass level BPM (Russian UI)"> |
 
-**Как читать монитор:**
-- **ФАКТИЧЕСКАЯ ВИБРАЦИЯ (голубой)** — то, что дошло до корпуса телефона (акселерометр, % и м/с²).
-- **КОМАНДА (розовый)** — то, что приложение запросило у мотора (амплитуда 0–255 и длительность).
-- **МОТОР 0 / МОТОР 1** — отдельная карточка на каждый актуатор, увиденный Android.
-- **ТАЙМЛАЙН** — последние 15 секунд: двигайте взгляд вправо — там «сейчас».
+**How to read the monitor:**
+- **ACTUAL VIBRATION (cyan)** — what reached the phone body (accelerometer, % and m/s²).
+- **COMMAND (pink)** — what the app requested from the motor (amplitude 0–255 and duration).
+- **MOTOR 0 / MOTOR 1** — one card per actuator seen by Android.
+- **TIMELINE** — last 15 seconds: look right — that is “now”.
 
 ---
 
-## ✨ Возможности
+## ✨ Features
 
-### 📁 Локальные файлы
-- Выбор аудио/видео через системный picker (`OpenDocument`) — без доступа ко всей памяти.
-- **Media3 / ExoPlayer**: MP3, FLAC, WAV, AAC, OGG, MP4, MKV и всё, что умеет Android.
-- Перехват PCM-потока собственным `AudioTapProcessor` — анализ по тому же таймлайну, что слышит пользователь.
-- Видео: общий таймлайн ExoPlayer + `SurfaceView` — картинка, звук и вибрация не расходятся.
-- Перемотка, пауза, продолжение, корректная остановка вибрации при паузе/завершении/ошибке.
+### 📁 Local files
+- Pick audio or video via the system picker (`OpenDocument`) — no broad storage access.
+- **Media3 / ExoPlayer**: MP3, FLAC, WAV, AAC, OGG, MP4, MKV and everything Android supports.
+- PCM interception with a custom `AudioTapProcessor` — analysis follows the same timeline the user hears.
+- Video: shared ExoPlayer timeline + `SurfaceView` — picture, sound and vibration stay in sync.
+- Seek, pause, resume, clean vibration stop on pause / finish / error.
 
-### 🎙️ Живой режим
-- **Системный звук** через `AudioPlaybackCapture` (Android 10+). На Android 14+ соблюдён порядок запуска foreground-сервиса с типом `mediaProjection`.
-- **Микрофон**: `UNPROCESSED` с fallback на `MIC`, таймер сессии, индикаторы уровня и BPM.
-- Фоновая работа: foreground-сервис с уведомлением и «Стоп», `PARTIAL_WAKE_LOCK`.
+### 🎙️ Live mode
+- **System sound** via `AudioPlaybackCapture` (Android 10+). On Android 14+ the `mediaProjection`-typed foreground service starts before `MediaProjection`.
+- **Microphone**: `UNPROCESSED` with `MIC` fallback, session timer, level and BPM indicators.
+- Background work: foreground service with notification and “Stop”, `PARTIAL_WAKE_LOCK`.
 
-### 🎵 Анализ и вибрация
-- Собственный FFT (1024 точки, Ханн, hop 512) без внешних DSP-библиотек.
-- Полоса баса 28–170 Гц, огибающая уровня, спектр для визуализации.
-- Детектор атак с адаптивным порогом и медианным трекингом BPM.
-- Три профиля: **Мягкий** (плавные волны на сильных басах), **Резкий** (короткие удары на акценты), **Динамический** (амплитуда и длительность следуют за музыкой).
-- Интенсивность, чувствительность и задержка синхронизации 0–250 мс.
-- Оптимизация под линейные моторы Pixel: one-shot импульсы с управляемой амплитудой, отдельный `HandlerThread`.
+### 🎵 Analysis and vibration
+- Custom FFT (1024 points, Hann, hop 512) without external DSP libraries.
+- Bass band 28–170 Hz, level envelope, spectrum for visualization.
+- Attack detector with adaptive threshold and median BPM tracking.
+- Three profiles: **Soft** (smooth waves on strong bass), **Sharp** (short accurate hits on accents), **Dynamic** (amplitude and duration follow the music).
+- Intensity, sensitivity and sync delay 0–250 ms.
+- Tuned for Pixel linear motors: one-shot pulses with controllable amplitude, dedicated `HandlerThread`.
 
-### 🎨 Интерфейс
-- Material 3 (тёмная/светлая/системная тема), **Material You / Dynamic Color** на Android 12+.
-- Карточки, сегменты, слайдеры, FAB, нижняя навигация и живой визуализатор спектра.
-- Локализация: русский и английский. В приложении — **Настройки → Оформление → Язык**: Системный / Русский / English (per-app locale, сохраняется после перезапуска).
+### 🎨 Interface
+- Material 3 (dark / light / system theme), **Material You / Dynamic Color** on Android 12+.
+- Cards, segments, sliders, FAB, bottom navigation and a live spectrum visualizer.
+- Localization: Russian (default resources) and English (`values-en`). In-app switch
+  under **Settings → Appearance → Language**: System / Русский / English (per-app locale,
+  survives restart).
 
-### 🖥️ Отладка на ПК
-- Опциональная UDP-телеметрия (порт **45454**) для настольного монитора.
-- Каждому мотору: id, команда 0–255, длительность; плюс независимая оценка вибрации по акселерометру.
-- Вкл. в **Настройки → Отладка → Монитор на ПК** (по умолчанию выключено). IP из монитора или широковещание.
-- Windows-дашборд: шкала факта, карточки моторов, таймлайн, демо-режим с двумя моторами.
-- Монитор двуязычный: определяют язык Windows, запоминает выбор, переключается кнопкой **RU / EN** (`--lang=ru` / `--lang=en`).
+### 🖥️ PC debugging
+- Optional UDP telemetry (port **45454**) for the desktop monitor.
+- Per motor: id, command 0–255, duration; plus an independent accelerometer vibration estimate.
+- Enable in **Settings → Debug → PC monitor** (off by default). PC IP from the monitor or broadcast.
+- Windows dashboard: actual scale, motor cards, timeline, demo mode with two motors.
+- Desktop monitor is bilingual too: auto-detects Windows language, remembers your choice,
+  toggle with **RU / EN** in the header, force with `--lang=ru` / `--lang=en`.
 
 ---
 
-## ⚙️ Как это работает
+## ⚙️ How it works
 
 ```mermaid
 flowchart LR
     subgraph ANDROID["📱 Android · JustVibrait"]
-        A["Файл / системный звук / микрофон"] --> B["ExoPlayer / AudioPlaybackCapture / Record"]
+        A["File / system sound / mic"] --> B["ExoPlayer / AudioPlaybackCapture / Record"]
         B --> C["AudioTapProcessor<br/>PCM 16-bit"]
-        C --> D["AudioAnalyzer<br/>FFT · бас · beat · BPM"]
-        D --> E["VibeEngine<br/>профили · амплитуда · длительность"]
-        E --> F["Vibrator<br/>one-shot импульсы"]
-        D --> G["UDP JV1 · 45454<br/>команда моторов + акселерометр"]
+        C --> D["AudioAnalyzer<br/>FFT · bass · beat · BPM"]
+        D --> E["VibeEngine<br/>profiles · amplitude · duration"]
+        E --> F["Vibrator<br/>one-shot pulses"]
+        D --> G["UDP JV1 · 45454<br/>motor commands + accelerometer"]
     end
-    G --> H["🖥️ Windows Monitor<br/>шкала факта · карточки · таймлайн"]
+    G --> H["🖥️ Windows Monitor<br/>actual scale · cards · timeline"]
 ```
 
-**Ключевой момент:** Android не отдаёт приложениям фактическую амплитуду мотора.
-Поэтому монитор честно различает **команду** (что попросило приложение) и **факт**
-(что реально измерил акселерометр корпуса).
+**Key point:** Android does not expose the actual motor amplitude.
+So the monitor honestly separates **command** (what the app requested) from **actual**
+(what the accelerometer really measured on the body).
 
 ---
 
-## 🚀 Установка
+## 🚀 Install
 
-### 📱 Android-приложение
+### 📱 Android app
 
 | | |
 |---|---|
-| **Скачать APK** | [GitHub Release v1.2.0](https://github.com/121kirillmorti/justvibrait/releases/tag/v1.2.0) — `JustVibrait-1.2.0-release.apk` |
-| **Установить** | `adb install -r JustVibrait-1.2.0-release.apk` или установка из файла |
-| **Проверка** | SHA-256 в релизе + `apksigner verify --print-certs` (CN=kotiktortiktech) |
+| **Download APK** | [GitHub Release v1.2.0](https://github.com/121kirillmorti/justvibrait/releases/tag/v1.2.0) — `JustVibrait-1.2.0-release.apk` |
+| **Install** | `adb install -r JustVibrait-1.2.0-release.apk` or install the file |
+| **Check** | SHA-256 in the release + `apksigner verify --print-certs` (CN=kotiktortiktech) |
 
-### 🖥️ Монитор для ПК
+### 🖥️ PC monitor
 
 | | |
 |---|---|
-| **Скачать** | [GitHub Release v1.2.0](https://github.com/121kirillmorti/justvibrait/releases/tag/v1.2.0) — `JustVibraitMotorMonitor-1.1.0-win.zip` |
-| **Запуск** | Распакуйте и запустите `JustVibraitMotorMonitor.exe` |
-| **Проверка без телефона** | Кнопка **ДЕМО** или `JustVibraitMotorMonitor.exe --demo` |
-| **Язык** | Кнопка **RU / EN** в шапке или `--lang=ru` / `--lang=en` |
+| **Download** | [GitHub Release v1.2.0](https://github.com/121kirillmorti/justvibrait/releases/tag/v1.2.0) — `JustVibraitMotorMonitor-1.1.0-win.zip` |
+| **Run** | Unzip and run `JustVibraitMotorMonitor.exe` |
+| **Check without a phone** | **DEMO** button or `JustVibraitMotorMonitor.exe --demo` |
+| **Language** | **RU / EN** button in the header, or `--lang=ru` / `--lang=en` |
 
 ---
 
-## 📖 Использование
+## 📖 Usage
 
-1. Откройте **Файл** и выберите аудио/видео — или на вкладке **Live** захватите системный звук / микрофон.
-2. В настройках подберите **профиль** (Мягкий / Резкий / Динамический), интенсивность и чувствительность.
-3. Настройте **задержку** 0–250 мс: увеличьте, если вибрация опережает звук (Bluetooth/USB).
-4. Для отладки: **Настройки → Отладка → Монитор на ПК** → включите и, при необходимости, введите IP ПК из окна монитора.
-5. Смотрите на ПК: совпадает ли розовая **команда** с голубым **фактом**? Если факт слабее — мотор не тянет амплитуду.
-
----
-
-## 🖥️ Монитор на ПК
-
-Тёмный дашборд на WinForms (`desktop/JustVibraitMotorMonitor`). Собирается системным
-`csc.exe` из .NET Framework 4.8 — без .NET SDK и Python.
-
-### Что показывает
-
-- **ФАКТИЧЕСКАЯ ВИБРАЦИЯ** — шкала по акселерометру (% и м/с²) + розовая дуга команды.
-- **Карточки моторов** — по одной на каждый `VibratorManager`-id: основной/дополнительный, управляемость амплитуды, команда и длительность.
-- **ТАЙМЛАЙН** — 15 секунд истории: факт (голубой) и команда (розовый), метки бита.
-- **СИГНАЛ** — бас, уровень, темп, порог и интенсивность в реальном времени.
-- **ДЕМО** — синтетика с двумя моторами (126 BPM) для проверки интерфейса.
-
-### Быстрый запуск
-
-1. Запустите монитор, подключите телефон и ПК к одной Wi-Fi сети.
-2. На телефоне: **Настройки → Отладка → Монитор на ПК** → включите.
-3. Если Windows блокирует UDP, один раз запустите `allow-firewall.ps1` от администратора.
-4. Нажмите **ДЕМО** — убедитесь, что дашборд живой, затем выключите демо и включите музыку на телефоне.
-
-> UDP-пакеты не шифруются и идут только по локальной сети. Включайте телеметрию в доверенной сети.
+1. Open **File** and pick audio/video — or on the **Live** tab capture system sound / mic.
+2. In settings pick a **profile** (Soft / Sharp / Dynamic), intensity and sensitivity.
+3. Set **delay** 0–250 ms: increase it if vibration runs ahead of sound (Bluetooth/USB).
+4. For debugging: **Settings → Debug → PC monitor** → enable and, if needed, enter the PC IP from the monitor window.
+5. On PC: does the pink **command** match the cyan **actual**? If actual is weaker — the motor is not reaching the amplitude.
 
 ---
 
-## 🧱 Архитектура
+## 🖥️ PC monitor
+
+A dark WinForms dashboard (`desktop/JustVibraitMotorMonitor`). Built with the system
+`csc.exe` from .NET Framework 4.8 — no .NET SDK or Python needed.
+
+### What it shows
+
+- **ACTUAL VIBRATION** — accelerometer scale (% and m/s²) + the pink command arc.
+- **Motor cards** — one per `VibratorManager` id: primary/secondary, amplitude controllability, command and duration.
+- **TIMELINE** — 15 seconds: actual (cyan) and command (pink), beat ticks.
+- **SIGNAL** — bass, level, tempo, threshold and intensity in real time.
+- **DEMO** — 126 BPM synthetic data with two motors for UI checks (`--demo`).
+
+### Quick start
+
+1. Run the monitor; phone and PC on the same Wi-Fi.
+2. On the phone: **Settings → Debug → PC monitor** → enable.
+3. If Windows blocks UDP, run `allow-firewall.ps1` once as admin (UDP 45454 rule).
+4. Press **DEMO** to verify the dashboard, then disable demo and play music on the phone.
+
+> UDP packets are unencrypted and stay on the local network. Enable telemetry only on trusted networks.
+
+---
+
+## 🧱 Architecture
 
 ```
 app/src/main/java/com/kotiktortiktech/justvibrait/
-├── MainActivity.kt              # edge-to-edge Compose-хост
-├── MainViewModel.kt             # настройки, плеер, вибродвижок
-├── audio/                       # FFT, бас, атаки, BPM, PCM-tap
-├── data/                        # AppSettings + SettingsRepository
-├── debug/VibeTelemetry.kt       # UDP JV1, перебор моторов, акселерометр
-├── media/LocalMediaManager.kt   # ExoPlayer + состояние плеера
-├── service/LiveVibeService.kt   # foreground-захват и вибрация
-├── ui/                          # Scaffold, навигация, экраны, тема M3
-└── vibration/VibeEngine.kt      # профили и one-shot вибрация
+├── MainActivity.kt              # edge-to-edge Compose host
+├── MainViewModel.kt             # settings, player, haptic engine
+├── audio/                       # FFT, bass, attacks, BPM, PCM tap
+├── data/                        # AppSettings (incl. AppLanguage) + SettingsRepository
+├── debug/VibeTelemetry.kt       # UDP JV1, motor enumeration, accelerometer
+├── media/LocalMediaManager.kt   # ExoPlayer + player state
+├── service/LiveVibeService.kt   # foreground capture + vibration
+├── ui/                          # Scaffold, navigation, screens, M3 theme
+└── vibration/VibeEngine.kt      # profiles + one-shot vibration
 
 desktop/JustVibraitMotorMonitor/
 ├── src/                         # TelemetryPacket, UDP, ArcGauge, MotorCard,
-│                                # TimelineGraph, форма, Chrome
-├── tests/SelfTest.cs            # парсер JV1 + UDP-loopback self-тесты
+│                                # TimelineGraph, form, Chrome, Localization (RU/EN)
+├── tests/SelfTest.cs            # JV1 parser + UDP-loopback self-tests
 └── build.ps1                    # csc.exe → dist/*.exe
 ```
 
-Поток локального режима:
+Local-mode data flow:
 
 ```
 URI → ExoPlayer → AudioTapProcessor (PCM)
-    → HandlerThread → AudioAnalyzer (FFT / бас / beat / BPM)
+    → HandlerThread → AudioAnalyzer (FFT / bass / beat / BPM)
     → VibeEngine → Vibrator → StateFlow → Compose UI
 ```
 
 ---
 
-## 🔌 Телеметрия JV1
+## 🔌 JV1 telemetry
 
-UDP **45454**, одно таб-разделённое сообщение на пакет:
+UDP **45454**, one tab-separated message per packet:
 
 ```
 JV1  seq  uptimeMs  device  android  sdk  source  profile  intensity  threshold
@@ -250,39 +255,39 @@ JV1  seq  uptimeMs  device  android  sdk  source  profile  intensity  threshold
 ```
 
 `motors` — `id:hasAmplitude:amplitude:durationMs:isDefault;...`
-Пакет удобно смотреть в Wireshark. Короткие импульсы удерживаются минимум 140 мс, факт — peak-hold/decay.
+Watch it in Wireshark. Short pulses are held for at least 140 ms; actual is peak-hold/decay.
 
 ---
 
-## 🔨 Сборка из исходников
+## 🔨 Building from source
 
-### Требования
+### Requirements
 
-- JDK 17, Android SDK Platform 35 + Build-Tools 35.0.0, Gradle 8.9 (wrapper включён)
-- Windows 10/11 с .NET Framework 4.8 (для монитора)
+- JDK 17, Android SDK Platform 35 + Build-Tools 35.0.0, Gradle 8.9 (wrapper included)
+- Windows 10/11 with .NET Framework 4.8 (for the monitor)
 
 ```powershell
 $env:JAVA_HOME = "C:\dev\jdk17"
 $env:ANDROID_HOME = "C:\AndroidSdk"
 
-# Debug (applicationId с суффиксом .debug)
+# Debug (applicationId with .debug suffix)
 .\gradlew.bat :app:assembleDebug
 
-# Release (подписанный APK)
+# Release (signed APK)
 .\gradlew.bat :app:assembleRelease
 
-# Монитор на ПК + self-тесты
+# PC monitor + self-tests
 cd desktop\JustVibraitMotorMonitor
 powershell -ExecutionPolicy Bypass -File .\build.ps1
 ```
 
-### Подпись
+### Signing
 
-Release подписывается ключом `keystore/justvibrait-release.jks` (alias `justvibrait`).
-Ключ **не хранится в репозитории** (см. `.gitignore`) — перед сборкой release создайте
-свой и укажите пути в `app/build.gradle.kts`. Для публикации в Google Play замените ключ и пароли.
+Release is signed with `keystore/justvibrait-release.jks` (alias `justvibrait`).
+The key is **not in the repository** (see `.gitignore`) — create your own and point to it
+in `app/build.gradle.kts` before building a release. For Google Play, replace the key and passwords.
 
-Проверка:
+Check:
 
 ```powershell
 & "$env:ANDROID_HOME\build-tools\35.0.0\apksigner.bat" verify --verbose --print-certs dist\JustVibrait-1.2.0-release.apk
@@ -291,37 +296,37 @@ Release подписывается ключом `keystore/justvibrait-release.jk
 
 ---
 
-## 🔐 Разрешения
+## 🔐 Permissions
 
-| Разрешение | Зачем |
+| Permission | Why |
 |---|---|
-| `VIBRATE` | Импульсы вибромотора |
-| `RECORD_AUDIO` | Микрофон и `AudioPlaybackCapture` |
-| `INTERNET` | UDP-телеметрия на ПК (только если включена отладка) |
-| `POST_NOTIFICATIONS` | Уведомление foreground-сервиса (Android 13+) |
-| `FOREGROUND_SERVICE*` | Фоновый захват звука/микрофона (Android 14+) |
-| `WAKE_LOCK` | Стабильная работа при выключенном экране |
+| `VIBRATE` | Vibrator pulses |
+| `RECORD_AUDIO` | Microphone and `AudioPlaybackCapture` |
+| `INTERNET` | UDP telemetry to PC (only if debug is on) |
+| `POST_NOTIFICATIONS` | Foreground service notification (Android 13+) |
+| `FOREGROUND_SERVICE*` | Background audio/mic capture (Android 14+) |
+| `WAKE_LOCK` | Stable work with the screen off |
 
-Доступ к файлам — только на выбранный документ (`takePersistableUriPermission`).
-
----
-
-## ⚠️ Ограничения
-
-- Захват системного звука недоступен для приложений, запретивших `AudioPlaybackCapture` (отдельные стриминги) — тогда микрофон.
-- На Android 14+ согласие на захват экрана/звука спрашивается при каждом запуске — требование платформы.
-- Вибрация зависит от мотора: на линейных актуаторах (Pixel) точнее всего, на ERM ощущается иначе.
-- Задержка синхронизации зависит от аудиовыхода (Bluetooth/USB) — настраивается в приложении.
-- BPM и атаки эвристические: на шуме и живой речи возможны ложные срабатывания.
-- Фактическую амплитуду моторов Android не отдаёт — монитор измеряет только корпус акселерометром, а каждый мотор отдельно измерить нельзя.
-
-Приложение не передаёт данные в интернет и не содержит аналитики. Телеметрия на ПК — только по вашему включению.
+File access is granted per document (`takePersistableUriPermission`).
 
 ---
 
-## 📄 Лицензия
+## ⚠️ Limitations
 
-[MIT](LICENSE) © 2026 kotiktortiktech. Сторонние библиотеки — по их лицензиям (AndroidX, Jetpack Compose, Media3).
+- System sound capture is unavailable for apps that forbade `AudioPlaybackCapture` (some streamers) — use the microphone instead.
+- On Android 14+ the screen/audio capture consent dialog appears at every start — a platform requirement.
+- Vibration depends on the motor: linear actuators (Pixel) are the most accurate; ERM motors feel different.
+- Sync delay depends on the audio output (Bluetooth/USB) — tune it in settings.
+- BPM and attacks are heuristic: noise and live speech may trigger false positives.
+- Android never exposes the actual motor amplitude — the monitor only measures the body via the accelerometer; each motor cannot be measured separately.
+
+The app sends no data over the internet and contains no analytics. PC telemetry is opt-in.
+
+---
+
+## 📄 License
+
+[MIT](LICENSE) © 2026 kotiktortiktech. Third-party libraries under their own licenses (AndroidX, Jetpack Compose, Media3).
 
 <div align="center">
 
@@ -329,6 +334,6 @@ Release подписывается ключом `keystore/justvibrait-release.jk
 
 Made with 🎧 + 📳 by **kotiktortiktech**
 
-⭐ [Поставить звезду](https://github.com/121kirillmorti/justvibrait) · [Все релизы](https://github.com/121kirillmorti/justvibrait/releases)
+⭐ [Star](https://github.com/121kirillmorti/justvibrait) · [All releases](https://github.com/121kirillmorti/justvibrait/releases)
 
 </div>
