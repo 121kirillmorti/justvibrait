@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/screenshots/hero-en.png" alt="JustVibrait — Vibration synced to music" width="100%">
+<img src="docs/screenshots/cover-en.png" alt="JustVibrait — Vibration synced to music (app logo and phone UI)" width="100%">
 
 <br><br>
 

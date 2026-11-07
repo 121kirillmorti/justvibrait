@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/screenshots/hero.png" alt="JustVibrait — вибрация в такт музыке" width="100%">
+<img src="docs/screenshots/cover.png" alt="JustVibrait — вибрация в такт музыке (логотип и интерфейс телефона)" width="100%">
 
 <br><br>
 
